@@ -1,0 +1,61 @@
+POST-IT BREAKDOWN
+
+- PAGES & VIEWS
+home page
+auth (login)
+email-verification
+auth(sign-up)
+stories page
+dashboard page
+Notification page
+profile page
+user-profile-stories-page
+single-post-page
+auth-info-modals(2)
+
+- COMPONENTS
+navbar
+footer
+hero
+tumbnail-card-with details
+grid-card
+blog-layout-card
+dashboard-layout-card
+dashboard-sidebar
+who-to-follow-layout
+whats-trending-layout
+banner
+info-modals(4)
+
+- DYNAMIC (COMPONENTS)
+-navbar
+-grid-card
+-porpular-stories-card
+
+- FONTS
+font-family: Harmattan;
+font-family: Open-sans
+
+html {
+    font-size: calc(15px + 0.390625vw);
+}
+This formula calculates our font size as 15px plus 0.00390625% of the screen width. These values have been specifically chosen because they result in the perfect font sizes at every breakpoint:
+
+- COLOR SCHEME
+accent: hsba(194, 100%, 69%, 1);
+white: hsba(210, 1%, 100%, 1);
+black: hsba(0, 0%, 16%, 1);
+background-white:  #E5E5E5
+dashboard-background: hsba(208, 6%, 100%, 1);
+
+
+- UNIT
+rem - fonts,
+em, %
+
+
+
+
+
+
+
