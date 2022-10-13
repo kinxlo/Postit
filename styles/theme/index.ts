@@ -6,6 +6,7 @@ const theme = extendTheme({
     global: {
       body: {
         bg: "white",
+        color: "black",
       },
     },
   },
@@ -13,7 +14,7 @@ const theme = extendTheme({
     transparent: "transparent",
     black: "#292929",
     white: "#FDFEFF",
-    assent: "#0086B0",
+    accent: "#0086B0",
     dashboardBg: "#F0F8FF",
   },
   breakpoints: {

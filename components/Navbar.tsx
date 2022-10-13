@@ -25,7 +25,7 @@ const Navbar = () => {
             </Link>
             <Link href={`/`}>Sign In</Link>
           </Flex>
-          <Button size={`sm`} bgColor={`assent`} px={7} py={5} color={`white`}>
+          <Button size={`sm`} bgColor={`accent`} px={7} py={5} color={`white`}>
             Get Started
           </Button>
         </Flex>
