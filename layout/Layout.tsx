@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
 interface iProps {
@@ -10,7 +11,7 @@ const layout = ({ children }: iProps) => {
     <>
       <Navbar />
       <main>{children}</main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

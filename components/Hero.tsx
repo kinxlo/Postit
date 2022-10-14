@@ -27,7 +27,7 @@ const Hero = ({ image, children }: props) => {
       <Container className="cc-container">
         <Box width={{ base: `100%`, md: `50%` }}>
           {children}
-          <GetStartedForm size={`70%`} />
+          <GetStartedForm size={{ base: `70%` }} />
         </Box>
       </Container>
     </Flex>
