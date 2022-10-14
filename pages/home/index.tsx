@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import React from "react";
+import Banner from "../../components/Banner";
 import DetailedCard from "../../components/DetailedCard";
 import Hero from "../../components/Hero";
 import MiniDetailedCard from "../../components/MiniDetailedCard";
@@ -37,7 +38,7 @@ const index = () => {
           <Heading fontSize={`8xl`} as={`h1`}>
             Stay Curious.
           </Heading>
-          <Text lineHeight={8} letterSpacing={`wide`}>
+          <Text mb={12} lineHeight={8} letterSpacing={`wide`}>
             Lorem ipsum dolor sit ameetur adipiscing elit. Coctetur egestas
             massa velit aliquam. Molestim bibendum hnt ipsum orci, platea
             aliquam id ut.{" "}
@@ -120,6 +121,9 @@ const index = () => {
             <DetailedCard fontsize={`lg`} width={`13rem`} dir={`row-reverse`} />
           </Box>
         </SimpleGrid>
+      </Container>
+      <Container mb={24} className={`cc-container`}>
+        <Banner />
       </Container>
     </main>
   );

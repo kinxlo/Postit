@@ -8,6 +8,7 @@ import {
   InputRightAddon,
 } from "@chakra-ui/react";
 import React, { ReactNode } from "react";
+import GetStartedForm from "./GetStartedForm";
 
 interface props {
   image: string;
@@ -26,25 +27,7 @@ const Hero = ({ image, children }: props) => {
       <Container className="cc-container">
         <Box width={{ base: `100%`, md: `50%` }}>
           {children}
-          <InputGroup my={12} w={`70%`} size="md">
-            <Input
-              type={`email`}
-              borderRadius={`5px 0 0 5px`}
-              border={`1px solid white!`}
-              bgColor={`white`}
-              placeholder="Email address"
-            />
-            <Button
-              borderRadius={`0 5px 5px 0`}
-              size={`sm`}
-              bgColor={`accent`}
-              px={7}
-              py={5}
-              color={`white`}
-            >
-              Get Started
-            </Button>
-          </InputGroup>
+          <GetStartedForm size={`70%`} />
         </Box>
       </Container>
     </Flex>
