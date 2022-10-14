@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import React from "react";
+import DetailedCard from "../../components/DetailedCard";
 import Hero from "../../components/Hero";
 import MiniDetailedCard from "../../components/MiniDetailedCard";
 import TrendCard from "../../components/TrendCard";
@@ -69,7 +70,7 @@ const index = () => {
           />
         </SimpleGrid>
       </Container>
-      <Container mb={5} className={`cc-container`}>
+      <Container mb={24} className={`cc-container`}>
         <Heading>Trending Stories</Heading>
         <Grid
           templateRows={{ base: `repeat(2, 1fr)` }}
@@ -106,6 +107,19 @@ const index = () => {
             <TrendCard />
           </GridItem>
         </Grid>
+      </Container>
+      <Container mb={24} className={`cc-container`}>
+        <Heading>Popular Stories</Heading>
+        <SimpleGrid gap={10} columns={{ base: 1, md: 2 }}>
+          <Box>
+            <DetailedCard fontsize={`2xl`} height={`22rem`} dir={`column`} />
+          </Box>
+          <Box>
+            <DetailedCard fontsize={`lg`} width={`13rem`} dir={`row-reverse`} />
+            <DetailedCard fontsize={`lg`} width={`13rem`} dir={`row-reverse`} />
+            <DetailedCard fontsize={`lg`} width={`13rem`} dir={`row-reverse`} />
+          </Box>
+        </SimpleGrid>
       </Container>
     </main>
   );
