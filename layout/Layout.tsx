@@ -6,7 +6,7 @@ interface iProps {
   children: ReactNode;
 }
 
-const layout = ({ children }: iProps) => {
+const Layout = ({ children }: iProps) => {
   return (
     <>
       <Navbar />
@@ -16,4 +16,4 @@ const layout = ({ children }: iProps) => {
   );
 };
 
-export default layout;
+export default Layout;

@@ -12,7 +12,6 @@ const TrendCard = () => {
       h={`100%`}
       pos={`relative`}
       overflow={`hidden`}
-    
     >
       <Image
         mixBlendMode={`multiply`}
@@ -34,7 +33,7 @@ const TrendCard = () => {
       >
         <TagLabel name={`Nature`} color={`green`} />
         <Box>
-          <AvatarDetail name={`kingsley solomon`} size={`sm`} />
+          <AvatarDetail isCard={true} name={`kingsley solomon`} size={`sm`} />
           <Text as={`h3`} fontSize={`2xl`} my={5}>
             The 20 Biggest Agro Companies In Nigeria 2022
           </Text>

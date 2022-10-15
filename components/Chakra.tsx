@@ -6,6 +6,8 @@ interface iProps {
   children?: ReactNode;
 }
 
-export function Chakra({ children }: iProps) {
+const Chakra = ({ children }: iProps) => {
   return <ChakraProvider theme={theme}>{children}</ChakraProvider>;
-}
+};
+
+export default Chakra;

@@ -23,6 +23,8 @@ const theme = extendTheme({
     white: "#FDFEFF",
     accent: "#0086B0",
     dashboardBg: "#F0F8FF",
+    lightBlue: "#F5F6F8",
+    lightGrey: "#757575",
   },
   breakpoints: {
     sm: "30em",

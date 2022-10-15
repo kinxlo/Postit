@@ -1,20 +1,24 @@
 import "../styles/globals.scss";
 import type { AppProps } from "next/app";
-import { Chakra } from "../components/Chakra";
-import Head from "next/head";
-import Layout from "../layout/Layout";
+import type { ReactElement, ReactNode } from "react";
+import type { NextPage } from "next";
+import Chakra from "../components/Chakra";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <Chakra>
-      <Head>
-        <title>Postit</title>
-      </Head>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </Chakra>
+type NextPageWithLayout = NextPage & {
+  getLayout?: (page: ReactElement, pageProps?: AppProps) => ReactNode;
+};
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout;
+};
+
+function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+  const layout = Component.getLayout ? (
+    Component.getLayout(<Component {...pageProps} />)
+  ) : (
+    <Component {...pageProps} />
   );
+
+  return <Chakra>{layout}</Chakra>;
 }
 
 export default MyApp;

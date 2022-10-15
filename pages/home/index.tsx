@@ -8,14 +8,15 @@ import {
   Text,
 } from "@chakra-ui/react";
 import styled from "@emotion/styled";
-import React from "react";
+import React, { ReactElement } from "react";
 import Banner from "../../components/Banner";
 import DetailedCard from "../../components/DetailedCard";
 import Hero from "../../components/Hero";
 import MiniDetailedCard from "../../components/MiniDetailedCard";
 import TrendCard from "../../components/TrendCard";
+import Layout from "../../layout/Layout";
 
-const index = () => {
+const Index = () => {
   const grid: object = {
     base: "repeat(1, 1fr)",
     sm: "repeat(2, 1fr)",
@@ -33,7 +34,8 @@ const index = () => {
     <main>
       <header>
         <Hero
-          image={`https://res.cloudinary.com/kingsleysolomon/image/upload/v1665668179/Postit/Rectangle_3_i36ay8.png`}
+          image={undefined}
+          bgImage={`https://res.cloudinary.com/kingsleysolomon/image/upload/v1665668179/Postit/Rectangle_3_i36ay8.png`}
         >
           <Heading fontSize={`8xl`} as={`h1`}>
             Stay Curious.
@@ -129,4 +131,8 @@ const index = () => {
   );
 };
 
-export default index;
+Index.getLayout = function getLayout(component: ReactElement) {
+  return <Layout>{component}</Layout>;
+};
+
+export default Index;

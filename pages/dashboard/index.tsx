@@ -1,13 +1,12 @@
 import React, { ReactElement } from "react";
-import Layout from "../layout/Layout";
-import Home from "./home";
+import DashboardLayout from "../../layout/DashboardLayout";
 
 const Index = () => {
-  return <Home />;
+  return <div>Index</div>;
 };
 
 Index.getLayout = function getLayout(component: ReactElement) {
-  return <Layout>{component}</Layout>;
+  return <DashboardLayout>{component}</DashboardLayout>;
 };
 
 export default Index;
