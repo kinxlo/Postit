@@ -8,34 +8,60 @@ import {
   Icon,
   Text,
 } from "@chakra-ui/react";
-import Link from "next/link";
 import React from "react";
 import { GoPlusSmall } from "react-icons/go";
 
-const FollowersSuggestionCard = () => {
+interface Props {
+  name: string;
+  job: string;
+  jobSize: string;
+  isProfile: boolean;
+  picSize: string;
+  nameSize: string;
+  img: string;
+  align?: string;
+}
+
+const FollowersSuggestionCard = ({
+  name,
+  job,
+  isProfile,
+  picSize,
+  nameSize,
+  img,
+  jobSize,
+  align,
+}: Props) => {
   return (
-    <Flex alignItems={`start`} justifyContent={`space-between`}>
-      <Flex alignItems={`start`} gap={5}>
-        <Avatar
-          size={`md`}
-          src={`https://images.unsplash.com/photo-1504199367641-aba8151af406?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTYzfHxwZW9wbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60`}
-        />
+    <Flex alignItems={align} justifyContent={`space-between`}>
+      <Flex
+        flexDir={{ base: `${isProfile ? "column" : "row"}`, md: `row` }}
+        alignItems={align}
+        gap={5}
+      >
+        <Avatar size={picSize} src={img} />
         <Box>
-          <Heading fontSize={`xl`}>Mario Davies</Heading>
-          <Text color={`lightGrey`} fontSize={`xs`} pr={5}>
-            Developer, Blogger, and Tech Enthusiast
+          <Heading fontSize={nameSize}>{name}</Heading>
+          <Text color={`lightGrey`} fontSize={jobSize} pr={{ base: 0, md: 5 }}>
+            {job}
           </Text>
         </Box>
       </Flex>
-      <Button
-        size={`md`}
-        borderColor={`accent`}
-        color={`accent`}
-        px={5}
-        variant={`outline`}
-      >
-        <Icon mr={1} as={GoPlusSmall} /> Follow
-      </Button>
+      {isProfile ? (
+        <Button size={`md`} bgColor={`accent`} color={`white`} px={5}>
+          Edit Profile
+        </Button>
+      ) : (
+        <Button
+          size={`md`}
+          borderColor={`accent`}
+          color={`accent`}
+          px={5}
+          variant={`outline`}
+        >
+          <Icon mr={1} as={GoPlusSmall} /> Follow
+        </Button>
+      )}
     </Flex>
   );
 };

@@ -16,25 +16,28 @@ const DashboarSidenav = () => {
       h={`100vh`}
     >
       <Box>
-        <Image
-          src={`https://res.cloudinary.com/kingsleysolomon/image/upload/v1665795885/Postit/logo_1_nyxl52.png`}
-          alt={`logo`}
-        />
+        <Link href={`/`}>
+          <Image
+            cursor={`pointer`}
+            src={`https://res.cloudinary.com/kingsleysolomon/image/upload/v1665795885/Postit/logo_1_nyxl52.png`}
+            alt={`logo`}
+          />
+        </Link>
       </Box>
       <Flex gap={12} flexDir={`column`}>
-        <Link href={`/`}>
+        <Link href={`/dashboard`}>
           <Icon fontSize={`3xl`} color={`grey`} as={FaHome} />
         </Link>
-        <Link href={`/`}>
+        <Link href={`/dashboard/edit`}>
           <Icon fontSize={`3xl`} color={`grey`} as={FaEdit} />
         </Link>
-        <Link href={`/`}>
+        <Link href={`/dashboard/profile`}>
           <Icon fontSize={`3xl`} color={`grey`} as={FaUserAlt} />
         </Link>
-        <Link href={`/`}>
+        <Link href={`/dashboard/notification`}>
           <Icon fontSize={`3xl`} color={`grey`} as={FaBell} />
         </Link>
-        <Link href={`/`}>
+        <Link href={`/dashboard/settings`}>
           <Icon fontSize={`3xl`} color={`grey`} as={FaCog} />
         </Link>
       </Flex>

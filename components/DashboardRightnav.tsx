@@ -57,8 +57,24 @@ const DashboardRightnav = () => {
           </Link>
         </Flex>
         <Flex flexDir={`column`} gap={5}>
-          <FollowersSuggestionCard />
-          <FollowersSuggestionCard />
+          <FollowersSuggestionCard
+            jobSize="md"
+            picSize="md"
+            isProfile={false}
+            name="Rajash Karim"
+            nameSize="2xl"
+            job="Photographer, Writer, Frontend Dev"
+            img="https://images.unsplash.com/photo-1659535998184-15d6c9f5f873?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxzZWFyY2h8MTIwfHxwZW9wbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+          />
+          <FollowersSuggestionCard
+            jobSize="md"
+            picSize="md"
+            isProfile={false}
+            name="Sarah Bond"
+            nameSize="2xl"
+            job="Backend Dev"
+            img="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODh8fHBlb3BsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+          />
         </Flex>
       </Box>
     </Box>
