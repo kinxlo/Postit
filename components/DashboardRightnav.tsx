@@ -9,7 +9,7 @@ import ProfileStats from "./ProfileStats";
 
 const DashboardRightnav = () => {
   return (
-    <Box>
+    <Box px={8} py={5} pos={`sticky`} top={0}>
       <Box>
         <ProfileCrumb />
       </Box>

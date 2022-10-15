@@ -14,7 +14,10 @@ const DashboardLayout = ({ children }: iProps) => {
         <DashboardSidenav />
       </GridItem>
       <GridItem colSpan={{ base: 12, md: 7 }}>{children}</GridItem>
-      <GridItem px={8} py={5} colSpan={{ base: 12, md: 4 }}>
+      <GridItem
+        borderLeft={`1px solid lightGrey`}
+        colSpan={{ base: 12, md: 4 }}
+      >
         <DashboardRightnav />
       </GridItem>
     </Grid>

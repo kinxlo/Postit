@@ -6,6 +6,8 @@ import { FaUserAlt, FaHome, FaEdit, FaBell, FaCog } from "react-icons/fa";
 const DashboarSidenav = () => {
   return (
     <Flex
+      pos={`sticky`}
+      top={0}
       py={5}
       flexDir={`column`}
       alignItems={`center`}

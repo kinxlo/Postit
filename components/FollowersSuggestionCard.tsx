@@ -22,18 +22,19 @@ const FollowersSuggestionCard = () => {
         />
         <Box>
           <Heading fontSize={`xl`}>Mario Davies</Heading>
-          <Text color={`lightGrey`} fontSize={`xs`}>
+          <Text color={`lightGrey`} fontSize={`xs`} pr={5}>
             Developer, Blogger, and Tech Enthusiast
           </Text>
         </Box>
       </Flex>
       <Button
+        size={`md`}
         borderColor={`accent`}
         color={`accent`}
-        px={7}
+        px={5}
         variant={`outline`}
       >
-        <Icon mr={2} as={GoPlusSmall} /> Follow
+        <Icon mr={1} as={GoPlusSmall} /> Follow
       </Button>
     </Flex>
   );
