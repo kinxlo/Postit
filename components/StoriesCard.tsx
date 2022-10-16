@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Text, useToast } from "@chakra-ui/react";
 import React from "react";
 
 interface Props {
@@ -10,6 +10,18 @@ interface Props {
 }
 
 const StoriesCard = ({ title, text, isPublished, isDraft, isAll }: Props) => {
+  const toast = useToast({
+    description:
+      "Your story has been unpublished. Kindly check drafts for unpublished stories.",
+    duration: 5000,
+    status: `error`,
+    containerStyle: {
+      maxWidth: `600px`,
+      borderRadius: `10px`,
+      fontSize: `sm`,
+    },
+  });
+
   return (
     <Flex mb={10} flexDir={{ base: `column`, md: `row` }} gap={4}>
       <Box>
@@ -28,7 +40,13 @@ const StoriesCard = ({ title, text, isPublished, isDraft, isAll }: Props) => {
           <Button px={6} bg={`accent`} color={`white`}>
             View Post
           </Button>
-          <Button px={6} variant={`ghost`} color={`red`} borderColor={`red`}>
+          <Button
+            onClick={() => toast()}
+            px={6}
+            variant={`ghost`}
+            color={`red`}
+            borderColor={`red`}
+          >
             Delete
           </Button>
         </Flex>
@@ -44,7 +62,13 @@ const StoriesCard = ({ title, text, isPublished, isDraft, isAll }: Props) => {
           <Button px={6} bg={`accent`} color={`white`}>
             Edit
           </Button>
-          <Button px={6} variant={`ghost`} color={`red`} borderColor={`red`}>
+          <Button
+            onClick={() => toast()}
+            px={6}
+            variant={`ghost`}
+            color={`red`}
+            borderColor={`red`}
+          >
             Delete
           </Button>
         </Flex>
