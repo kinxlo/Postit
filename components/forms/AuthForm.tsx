@@ -6,6 +6,7 @@ import {
   Image,
   Input,
   Text,
+  useToast,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
@@ -15,6 +16,19 @@ interface Props {
 }
 
 const AuthForm = ({ isGetStarted }: Props) => {
+  const toast = useToast({
+    title: "Check your inbox.",
+    description: "Check your email address to complete your account set-up.",
+    status: `success`,
+    duration: 5000,
+    isClosable: true,
+    position: `bottom-left`,
+    containerStyle: {
+      borderRadius: `10px`,
+      fontSize: `sm`,
+    },
+  });
+
   return (
     <Box>
       <FormControl>
@@ -26,7 +40,13 @@ const AuthForm = ({ isGetStarted }: Props) => {
           placeholder={`Your email address`}
           _placeholder={{ textAlign: `center` }}
         />
-        <Button size={`lg`} bg={`accent`} w={`100%`} color={`white`}>
+        <Button
+          onClick={() => toast()}
+          size={`lg`}
+          bg={`accent`}
+          w={`100%`}
+          color={`white`}
+        >
           Continue
         </Button>
         <Box px={10} my={10} pos={`relative`}>

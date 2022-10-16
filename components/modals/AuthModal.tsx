@@ -53,7 +53,7 @@ const AuthModal = ({ title, subtitle, isSignedIn, children }: Props) => {
         isOpen={isOpen}
         onClose={onClose}
       >
-        <ModalOverlay />
+        <ModalOverlay bg={`rgba(0,0,0,0.7)`} />
         <ModalContent p={{ base: 10, sm: 20, xl: 32 }}>
           <ModalHeader textAlign={`center`} fontFamily={`Harmattan`}>
             <Heading mb={3}>
