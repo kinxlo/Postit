@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Container,
   Flex,
   Heading,
@@ -106,14 +107,10 @@ const SinglePost = () => {
           alt="whatsapp"
         />
       </Flex>
-      <Box my={12}>
-        <Heading fontSize={`3xl`} fontWeight={600}>
-          More like this
-        </Heading>
-        <Box my={5}>
-          <hr />
-        </Box>
-        <DetailedCard width={`251px`} dir="row-reverse" fontsize="2xl" />
+      <Box textAlign={`center`} my={12}>
+        <Button px={16} color={`white`} bg={`accent`}>
+          Go to Draft
+        </Button>
       </Box>
     </Container>
   );
