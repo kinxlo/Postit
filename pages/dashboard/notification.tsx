@@ -22,7 +22,7 @@ const Notification = () => {
           <Tab fontSize={`xl`}>Responses</Tab>
         </TabList>
 
-        <TabPanels>
+        <TabPanels my={12}>
           <TabPanel>
             <Feedback
               btnTitle={`Post A Story`}

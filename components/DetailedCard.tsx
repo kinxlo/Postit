@@ -23,7 +23,7 @@ const DetailedCard = ({ dir, height, fontsize, width, isStories }: Props) => {
   return (
     <Box mb={10}>
       <Flex
-        justifyContent={`start`}
+        justifyContent={`space-between`}
         flexDirection={dir}
         gap={isStories ? 5 : 10}
         mb={{ base: 7 }}

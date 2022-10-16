@@ -1,4 +1,4 @@
-import { Button, Input, InputGroup } from "@chakra-ui/react";
+import { Button, Input, InputGroup, InputRightAddon } from "@chakra-ui/react";
 import React from "react";
 
 interface Props {
@@ -11,20 +11,12 @@ const GetStartedForm = ({ size }: Props) => {
       <Input
         type={`email`}
         borderRadius={`5px 0 0 5px`}
-        border={`1px solid white!`}
         bgColor={`white`}
         placeholder="Email address"
       />
-      <Button
-        borderRadius={`0 5px 5px 0`}
-        size={`sm`}
-        bgColor={`accent`}
-        px={7}
-        py={5}
-        color={`white`}
-      >
+      <InputRightAddon bg={`accent`} color={`white`} cursor={`pointer`}>
         Get Started
-      </Button>
+      </InputRightAddon>
     </InputGroup>
   );
 };

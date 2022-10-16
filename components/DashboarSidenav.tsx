@@ -28,7 +28,7 @@ const DashboarSidenav = () => {
         <Link href={`/dashboard`}>
           <Icon fontSize={`3xl`} color={`grey`} as={FaHome} />
         </Link>
-        <Link href={`/dashboard/edit`}>
+        <Link href={`/dashboard/stories`}>
           <Icon fontSize={`3xl`} color={`grey`} as={FaEdit} />
         </Link>
         <Link href={`/dashboard/profile`}>

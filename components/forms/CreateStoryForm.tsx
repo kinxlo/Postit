@@ -8,9 +8,11 @@ import {
   Icon,
   Textarea,
   Button,
+  Flex,
+  InputRightAddon,
 } from "@chakra-ui/react";
 import React from "react";
-import { FaEdit } from "react-icons/fa";
+import { FaEdit, FaImage, FaTags } from "react-icons/fa";
 
 const CreateStoryForm = () => {
   return (
@@ -27,6 +29,30 @@ const CreateStoryForm = () => {
             _placeholder={{ fontSize: `sm` }}
           />
         </InputGroup>
+        <InputGroup mb={5} size={`lg`}>
+          <InputLeftElement pointerEvents="none">
+            <Icon as={FaTags} />
+          </InputLeftElement>
+          <Input
+            fontSize={`sm`}
+            placeholder="Tags"
+            _placeholder={{ fontSize: `sm` }}
+          />
+        </InputGroup>
+        <InputGroup mb={5} size={`lg`}>
+          <InputLeftElement pointerEvents="none">
+            <Icon as={FaImage} />
+          </InputLeftElement>
+          <Input
+            readOnly
+            fontSize={`sm`}
+            placeholder="Tumbnail"
+            _placeholder={{ fontSize: `sm` }}
+          />
+          <InputRightAddon bg={`accent`} color={`white`} cursor={`pointer`}>
+            Choose File
+          </InputRightAddon>
+        </InputGroup>
         <InputGroup size={`lg`}>
           <Textarea
             h={`20rem`}
@@ -36,9 +62,17 @@ const CreateStoryForm = () => {
             _placeholder={{ fontSize: `sm` }}
           />
         </InputGroup>
-        <Button my={5} px={20} py={8} size={`lg`} bg={`accent`} color={`white`}>
-          Continue
-        </Button>
+        <Flex justifyContent={`center`} gap={5}>
+          {/* <Button my={5} px={20} size={`lg`} bg={`accent`} color={`white`}>
+            Continue
+          </Button> */}
+          <Button my={5} px={20} size={`lg`} bg={`accent`} color={`white`}>
+            Publish Story
+          </Button>
+          <Button variant={`ghost`} my={5} px={20} size={`lg`} color={`red`}>
+            Save as Drafts
+          </Button>
+        </Flex>
       </FormControl>
     </Box>
   );

@@ -27,11 +27,11 @@ const theme = extendTheme({
     lightGrey: "#757575",
   },
   breakpoints: {
-    sm: "30em",
-    md: "48em",
-    lg: "62em",
-    xl: "80em",
-    "2xl": "96em",
+    sm: "30em", //320px
+    md: "48em", //768px
+    lg: "62em", //960px
+    xl: "80em", //1200px
+    "2xl": "96em", //1536px 4K viewport
   },
   fonts: {
     body: "Open Sans, sans-serif",

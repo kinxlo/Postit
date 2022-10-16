@@ -4,6 +4,10 @@ html {
   font-size: calc(10px + 0.390625vw);
   text-decoration: none;
   list-style-type: none;
+
+  @media screen and (min-width: 62em) {
+    font-size: calc(7px + 0.390625vw);
+  }
 }
 
 .cc-container {
