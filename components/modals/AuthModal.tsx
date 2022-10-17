@@ -4,7 +4,6 @@ import {
   ModalOverlay,
   ModalContent,
   ModalHeader,
-  ModalFooter,
   ModalBody,
   ModalCloseButton,
   Button,
@@ -12,6 +11,7 @@ import {
   Heading,
   Text,
   Highlight,
+  Link,
 } from "@chakra-ui/react";
 
 interface Props {
@@ -25,27 +25,26 @@ const AuthModal = ({ title, subtitle, isSignedIn, children }: Props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Button
-        variant={`unstyled`}
-        display={isSignedIn ? `block` : `none`}
-        onClick={onOpen}
-        fontSize={`1.5rem`}
-        fontWeight={400}
-        borderRadius={`none`}
-      >
+      <Link display={isSignedIn ? `block` : `none`} onClick={onOpen}>
         Sign In
-      </Button>
-      <Button
-        display={isSignedIn ? `none` : `block`}
+      </Link>
+
+      <Link
+        display={isSignedIn ? `none` : `inline-flex`}
+        alignItems={`center`}
+        textAlign={`center`}
+        justifyContent={`center`}
         onClick={onOpen}
         bgColor={`accent`}
-        fontSize={`1.5rem`}
-        px={10}
+        px={`4rem`}
+        h={`45px`}
         fontWeight={400}
+        borderRadius={`4px`}
         color={`white`}
       >
+        {" "}
         Get Started
-      </Button>
+      </Link>
 
       <Modal
         isCentered

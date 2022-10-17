@@ -4,6 +4,7 @@ import {
   Grid,
   GridItem,
   Heading,
+  Highlight,
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
@@ -34,13 +35,16 @@ const Index = () => {
     <main>
       <header>
         <Hero
+          isHome={true}
           image={undefined}
           bgImage={`https://res.cloudinary.com/kingsleysolomon/image/upload/v1665668179/Postit/Rectangle_3_i36ay8.png`}
         >
-          <Heading fontSize={`8xl`} as={`h1`}>
-            Stay Curious.
+          <Heading color={`white`} fontSize={`8xl`} as={`h1`}>
+            <Highlight query="us" styles={{ color: `accent` }}>
+              Stay Curious.
+            </Highlight>
           </Heading>
-          <Text mb={12} lineHeight={8} letterSpacing={`wide`}>
+          <Text color={`white`} mb={12} lineHeight={8} letterSpacing={`wide`}>
             Lorem ipsum dolor sit ameetur adipiscing elit. Coctetur egestas
             massa velit aliquam. Molestim bibendum hnt ipsum orci, platea
             aliquam id ut.{" "}

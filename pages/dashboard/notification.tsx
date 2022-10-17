@@ -14,7 +14,7 @@ import DashboardLayout from "../../layout/DashboardLayout";
 
 const Notification = () => {
   return (
-    <Container px={12} py={5} className={`cc-container`}>
+    <Container px={{base: 5, md: 0}} py={5} className={`cc-container`}>
       <Heading mb={3.5}>Notifications</Heading>
       <Tabs>
         <TabList>

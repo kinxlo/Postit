@@ -40,15 +40,11 @@ const AuthForm = ({ isGetStarted }: Props) => {
           placeholder={`Your email address`}
           _placeholder={{ textAlign: `center` }}
         />
-        <Button
-          onClick={() => toast()}
-          size={`lg`}
-          bg={`accent`}
-          w={`100%`}
-          color={`white`}
-        >
-          Continue
-        </Button>
+        <Link href={`/dashboard`}>
+          <Button py={3} size={`lg`} bg={`accent`} w={`100%`} color={`white`}>
+            Continue
+          </Button>
+        </Link>
         <Box px={10} my={10} pos={`relative`}>
           <hr />
           <Text
@@ -67,6 +63,7 @@ const AuthForm = ({ isGetStarted }: Props) => {
         </Box>
         <Flex flexDir={`column`} gap={5}>
           <Button
+            onClick={() => toast()}
             size={`lg`}
             w={`100%`}
             borderRadius={`8px`}
@@ -83,6 +80,7 @@ const AuthForm = ({ isGetStarted }: Props) => {
             Continue with Google
           </Button>
           <Button
+            onClick={() => toast()}
             size={`lg`}
             w={`100%`}
             borderRadius={`8px`}

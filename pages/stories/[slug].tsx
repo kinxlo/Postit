@@ -7,12 +7,11 @@ import DetailedCard from "../../components/DetailedCard";
 import TagLabel from "../../components/TagLabel";
 import Layout from "../../layout/Layout";
 
-
 const Singlestory = () => {
   const router = useRouter();
   const { slug } = router.query;
   return (
-    <Container px={12} py={5} className={`cc-container`}>
+    <Container px={{ base: 5, md: 12 }} py={5} className={`cc-container`}>
       <Box>
         <TagLabel name="Technology" color="purple" />
         <Heading my={5} fontSize={`5xl`}>

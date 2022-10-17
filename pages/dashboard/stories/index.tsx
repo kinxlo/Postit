@@ -17,7 +17,7 @@ import DashboardLayout from "../../../layout/DashboardLayout";
 
 const Index = () => {
   return (
-    <Container px={12} py={5} className={`cc-container`}>
+    <Container px={{ base: 5, md: 0 }} py={5} className={`cc-container`}>
       <Flex mb={10} justifyContent={`space-between`} alignItems={`center`}>
         <Heading>Your Stories</Heading>
         <Button px={10} bg={`black`} color={`white`}>

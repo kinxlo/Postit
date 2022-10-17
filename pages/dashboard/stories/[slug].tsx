@@ -19,7 +19,7 @@ const SinglePost = () => {
   const router = useRouter();
   const { slug } = router.query;
   return (
-    <Container px={12} py={5} className={`cc-container`}>
+    <Container px={{ base: 5, md: 0 }} py={5} className={`cc-container`}>
       <Box>
         <TagLabel name="Technology" color="purple" />
         <Heading my={5} fontSize={`5xl`}>

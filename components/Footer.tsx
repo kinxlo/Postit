@@ -14,7 +14,7 @@ import {
 import { VscArrowRight } from "react-icons/vsc";
 import { FaTwitter, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
 import React from "react";
-import GetStartedForm from "./GetStartedForm";
+import GetStartedForm from "./forms/GetStartedForm";
 
 const Footer = () => {
   const grid = {

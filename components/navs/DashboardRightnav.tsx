@@ -1,11 +1,11 @@
 import { Box, Flex, Heading } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
-import DashboardSearchbar from "./DashboardSearchbar";
-import DashboardTrendCard from "./DashboardTrendCard";
-import FollowersSuggestionCard from "./FollowersSuggestionCard";
-import ProfileCrumb from "./ProfileCrumb";
-import ProfileStats from "./ProfileStats";
+import DashboardSearchbar from "../forms/DashboardSearchbar";
+import DashboardTrendCard from "../DashboardTrendCard";
+import FollowersSuggestionCard from "../FollowersSuggestionCard";
+import ProfileCrumb from "../ProfileCrumb";
+import ProfileStats from "../ProfileStats";
 
 const DashboardRightnav = () => {
   return (
@@ -14,7 +14,7 @@ const DashboardRightnav = () => {
         <ProfileCrumb />
       </Box>
       <Box my={9}>
-        <ProfileStats />
+        <ProfileStats textFZ="md" numFZ="2xl" align="center" />
       </Box>
       <Box my={12}>
         <DashboardSearchbar />
@@ -58,7 +58,7 @@ const DashboardRightnav = () => {
         </Flex>
         <Flex flexDir={`column`} gap={5}>
           <FollowersSuggestionCard
-            jobSize="md"
+            jobSize="xs"
             picSize="md"
             isProfile={false}
             name="Rajash Karim"
@@ -67,7 +67,7 @@ const DashboardRightnav = () => {
             img="https://images.unsplash.com/photo-1659535998184-15d6c9f5f873?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxzZWFyY2h8MTIwfHxwZW9wbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
           />
           <FollowersSuggestionCard
-            jobSize="md"
+            jobSize="xs"
             picSize="md"
             isProfile={false}
             name="Sarah Bond"

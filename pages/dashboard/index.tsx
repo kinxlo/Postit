@@ -6,25 +6,37 @@ import DashboardLayout from "../../layout/DashboardLayout";
 
 const Index = () => {
   return (
-    <Container py={5} px={12} className={`cc-container`}>
+    <Container px={{ base: 5, md: 0 }} py={5} className={`cc-container`}>
       <CreateStoryForm />
       <Box>
         <Box my={10}>
           <hr />
         </Box>
-        <DetailedCard width={`251px`} dir={`row-reverse`} fontsize={`2xl`} />
+        <DetailedCard
+          width={`251px`}
+          dir={{ base: `column`, md: `row-reverse` }}
+          fontsize={`2xl`}
+        />
       </Box>
       <Box>
         <Box my={10}>
           <hr />
         </Box>
-        <DetailedCard width={`251px`} dir={`row-reverse`} fontsize={`2xl`} />
+        <DetailedCard
+          width={`251px`}
+          dir={{ base: `column`, md: `row-reverse` }}
+          fontsize={`2xl`}
+        />
       </Box>
       <Box>
         <Box my={10}>
           <hr />
         </Box>
-        <DetailedCard width={`251px`} dir={`row-reverse`} fontsize={`2xl`} />
+        <DetailedCard
+          width={`251px`}
+          dir={{ base: `column`, md: `row-reverse` }}
+          fontsize={`2xl`}
+        />
       </Box>
     </Container>
   );

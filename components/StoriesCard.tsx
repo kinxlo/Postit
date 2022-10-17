@@ -23,7 +23,7 @@ const StoriesCard = ({ title, text, isPublished, isDraft, isAll }: Props) => {
   });
 
   return (
-    <Flex mb={10} flexDir={{ base: `column`, md: `row` }} gap={4}>
+    <Flex mb={10} flexDir={{ base: `column`, lg: `row` }} gap={4}>
       <Box>
         <Text fontWeight={600} as={`h3`} fontSize={`lg`}>
           {title}

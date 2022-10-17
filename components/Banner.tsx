@@ -1,6 +1,6 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 import React from "react";
-import GetStartedForm from "./GetStartedForm";
+import GetStartedForm from "./forms/GetStartedForm";
 
 const Banner = () => {
   return (

@@ -5,9 +5,12 @@ html {
   text-decoration: none;
   list-style-type: none;
 
-  @media screen and (min-width: 62em) {
-    // font-size: calc(7px + 0.390625vw);
+  @media screen and (min-width: 48em) {
+    font-size: calc(7px + 0.390625vw);
   }
+}
+a {
+  text-decoration: none !important;
 }
 
 .cc-container {

@@ -7,7 +7,7 @@ interface Props {
 
 const GetStartedForm = ({ size }: Props) => {
   return (
-    <InputGroup w={size} size="md">
+    <InputGroup w={size} size="lg">
       <Input
         type={`email`}
         borderRadius={`5px 0 0 5px`}

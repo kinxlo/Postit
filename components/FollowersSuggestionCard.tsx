@@ -33,7 +33,7 @@ const FollowersSuggestionCard = ({
   align,
 }: Props) => {
   return (
-    <Flex alignItems={align} justifyContent={`space-between`}>
+    <Flex gap={3} alignItems={align} justifyContent={`space-between`}>
       <Flex
         flexDir={{ base: `${isProfile ? "column" : "row"}`, md: `row` }}
         alignItems={align}
@@ -47,21 +47,23 @@ const FollowersSuggestionCard = ({
           </Text>
         </Box>
       </Flex>
-      {isProfile ? (
-        <Button size={`md`} bgColor={`accent`} color={`white`} px={5}>
-          Edit Profile
-        </Button>
-      ) : (
-        <Button
-          size={`md`}
-          borderColor={`accent`}
-          color={`accent`}
-          px={5}
-          variant={`outline`}
-        >
-          <Icon mr={1} as={GoPlusSmall} /> Follow
-        </Button>
-      )}
+      <Box>
+        {isProfile ? (
+          <Button size={`md`} bgColor={`accent`} color={`white`} px={5}>
+            Edit Profile
+          </Button>
+        ) : (
+          <Button
+            size={`md`}
+            borderColor={`accent`}
+            color={`accent`}
+            w={`8rem`}
+            variant={`outline`}
+          >
+            <Icon mr={1} as={GoPlusSmall} /> Follow
+          </Button>
+        )}
+      </Box>
     </Flex>
   );
 };
