@@ -114,7 +114,7 @@ const Index = (props: any) => {
         </Grid>
       </Container>
       <Container mb={24} className={`cc-container`}>
-        <Heading>Popular Stories</Heading>
+        <Heading mb={7}>Popular Stories</Heading>
         <SimpleGrid gap={10} columns={{ base: 1, md: 2 }}>
           <Box>
             <DetailedCard

@@ -48,106 +48,20 @@ black: hsba(0, 0%, 16%, 1);
 background-white:  #E5E5E5
 dashboard-background: hsba(208, 6%, 100%, 1);
 
+- tagscolor:
+background: #E5BF5E; //yelow
+background: #41D750; //green
+background: #6397E5; /blue
+background: #F42A2A; //red
+
+
+
+
 
 - UNIT
 rem - fonts,
 em, %
 
-this aricule was of great help
-based on this article i will try breaking it down step by step
-reference: https://lazypandatech.com/blog/NextJs/50/REST-API-Call-using-Axios-Interceptor-in-React-NextJs/
 
-the task : integrate axios globally in next.js
-i will be using typescript and OOP concepts to demonstrate this solution...
-
-step 1:
-create an abstract class, we will call this class "axiosbaseService"
-
-import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
-
-export abstract class AxiosBaseService {
-  protected instance: AxiosInstance;
-  protected token?: string;
-  protected readonly baseURL: string;
-
-  public constructor(baseURL: string, token?: string) {
-    this.baseURL = baseURL;
-    this.instance = axios.create({
-      baseURL,
-    });
-    this.token = token;
-
-    this.initializeRequestInterceptor();
-    // this.initializeResponseInterceptor();
-  }
-
-  private initializeRequestInterceptor = () => {
-    this.instance.interceptors.request.use(this.handleRequest);
-  };
-
-  private handleRequest = (config: AxiosRequestConfig) => {
-    // config.headers!["Authorization"] = `Bearer ${this.token}`;
-    config.headers!["Accept-Language"] = "EN";
-    config.headers!["X-BingApis-SDK"] = "true";
-    config.headers!["X-RapidAPI-Key"] =
-      "c3555625admshdb2a267d55a30f0p1a1698jsn6c2c2fb2feda";
-    config.headers!["X-RapidAPI-Host"] = "bing-news-search1.p.rapidapi.com";
-    return config;
-  };
-}
-
-step 2:
-create the api service class, this clas would then extend the abstract class, in the proccess inheriting all methods and fields(if any).
-in our case, all we require is the super constructor
-
-import { AxiosBaseService } from "./AxiosBaseService";
-
-export class BingNewsService extends AxiosBaseService {
-  private static classInstance?: BingNewsService;
-
-  constructor() {
-    super("https://bing-news-search1.p.rapidapi.com");
-  }
-
-  public static getInstance() {
-    if (!this.classInstance) {
-      this.classInstance = new BingNewsService();
-    }
-
-    return this.classInstance;
-  }
-
-  public bingNewsData = () => {
-    this.instance
-      .get("/news", {
-        params: { cc: "us", safeSearch: "Off", textFormat: "Raw" },
-      })
-      .then((response) => {
-        if (response) {
-          console.log(response.data);
-          return response;
-        }
-      });
-  };
-}
-
-step 3
-
-call the api service class in your page component(SSR)
-
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const bingNews = BingNewsService.getInstance();
-  const res = bingNews.bingNewsData();
-
-//alternatively to view your request data and more info do a console.log(res)
-// the data should be in your integrated terminal as the request was done at
-request time and not so it won't display on the browser console tab.
-
-  return {
-    props: {
-      data: res.data,
-    },
-  };
-};
 
 

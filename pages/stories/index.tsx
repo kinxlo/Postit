@@ -10,16 +10,18 @@ import React, { ReactElement, ReactNode, useState } from "react";
 import DetailedCard from "../../components/DetailedCard";
 import Hero from "../../components/Hero";
 import Layout from "../../layout/Layout";
+import { NewsService } from "../../utils/NewsService.";
 
-const Index = () => {
-  const [posts, setPosts] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0]);
-  const postsCards = posts.map((post, index) => {
+const Index = (props: any) => {
+  const postsCards = props.popularStories.map((story: object) => {
     return (
       <DetailedCard
-        key={index}
+        data={story}
+        key={story.internalID}
         isStories={true}
         fontsize={`xl`}
         dir={`column`}
+        height={`20rem`}
       />
     );
   });
@@ -51,17 +53,20 @@ const Index = () => {
   );
 };
 
-
 Index.getLayout = function getLayout(component: ReactElement) {
   return <Layout>{component}</Layout>;
 };
 
 // This gets called on every request
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  console.log(ctx);
+  const news = NewsService.getInstance();
+
+  const popularStories = await news.getNewsData(`/news/list`, { id: "latest" });
 
   return {
-    props: {},
+    props: {
+      popularStories: popularStories.modules[0].stories,
+    },
   };
 };
 

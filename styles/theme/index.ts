@@ -25,6 +25,10 @@ const theme = extendTheme({
     dashboardBg: "#F0F8FF",
     lightBlue: "#F5F6F8",
     lightGrey: "#757575",
+    yellow: "#E5BF5E",
+    green: "#41D750",
+    blue: "#6397E5",
+    red: "#F42A2A",
   },
   breakpoints: {
     sm: "30em", //320px
