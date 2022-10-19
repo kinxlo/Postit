@@ -5,16 +5,13 @@ interface Props {
   size: string;
   name: string;
   isCard?: boolean;
+  date: string;
 }
 
-const AvatarDetail = ({ name, size, isCard }: Props) => {
+const AvatarDetail = ({ name, size, isCard, date }: Props) => {
   return (
     <Flex alignItems={`center`} gap={3}>
-      <Avatar
-        size={size}
-        name="Dan Abrahmov"
-        src="https://bit.ly/dan-abramov"
-      />
+      <Avatar bg={`black`} color={`white`} size={size} name={name} src="null" />
       <Flex alignItems={`center`} gap={2}>
         {/* <Text
           display={isCard ? `none` : `block`}
@@ -31,7 +28,7 @@ const AvatarDetail = ({ name, size, isCard }: Props) => {
           fontSize={`xs`}
           fontWeight={`thin`}
         >
-          - May 21, 2022
+          {date}
         </Text>
       </Flex>
     </Flex>

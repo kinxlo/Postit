@@ -5,6 +5,7 @@ import {
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
+import { GetServerSideProps } from "next";
 import React, { ReactElement, ReactNode, useState } from "react";
 import DetailedCard from "../../components/DetailedCard";
 import Hero from "../../components/Hero";
@@ -53,6 +54,15 @@ const Index = () => {
 
 Index.getLayout = function getLayout(component: ReactElement) {
   return <Layout>{component}</Layout>;
+};
+
+// This gets called on every request
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  console.log(ctx);
+
+  return {
+    props: {},
+  };
 };
 
 export default Index;

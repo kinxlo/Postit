@@ -3,7 +3,13 @@ import React from "react";
 import AvatarDetail from "./AvatarDetail";
 import TagLabel from "./TagLabel";
 
-const TrendCard = () => {
+interface Props {
+  trendingNews: any;
+}
+
+const TrendCard = ({ trendingNews }: Props) => {
+  const datePublished = new Date(trendingNews.published);
+
   return (
     <Box
       bg={`linear-gradient(0deg, rgba(41, 41, 41, 0.65), rgba(41, 41, 41, 0.65))`}
@@ -15,7 +21,7 @@ const TrendCard = () => {
     >
       <Image
         mixBlendMode={`multiply`}
-        src={`https://images.unsplash.com/photo-1444491741275-3747c53c99b4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8c3BvcnR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60`}
+        src={trendingNews.image}
         alt="trending-stories"
         className={`cc-img-fluid`}
       />
@@ -31,14 +37,19 @@ const TrendCard = () => {
         w={`100%`}
         h={`100%`}
       >
-        <TagLabel name={`Nature`} color={`green`} />
+        <TagLabel name={trendingNews.secondaryBrands[0]} color={`green`} />
         <Box>
-          <AvatarDetail isCard={true} name={`kingsley solomon`} size={`sm`} />
+          <AvatarDetail
+            date={datePublished.toLocaleDateString()}
+            isCard={true}
+            name={trendingNews.byline}
+            size={`sm`}
+          />
           <Text as={`h3`} fontSize={`2xl`} my={5}>
-            The 20 Biggest Agro Companies In Nigeria 2022
+            {trendingNews.title}
           </Text>
           <Text color={`lightgrey`} fontWeight={`thin`} fontSize={`lg`}>
-            May 21, 2022
+            {/* {datePublished.toLocaleDateString()} */}
           </Text>
         </Box>
       </Flex>

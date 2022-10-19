@@ -15,13 +15,16 @@ const MiniDetailedCard = ({ image, title, tagName }: props) => {
         <Image src={image} alt="title" className={`cc-img-fluid`} />
       </Box>
       <Flex
+        h={`100%`}
         flexDir={`column`}
-        justifyContent={`center`}
+        justifyContent={`start`}
         alignItems={`start`}
         width={`15rem`}
         gap={3}
       >
-        <TagLabel color={`#E5BF5E`} name={tagName} />
+        <Box mt={5}>
+          <TagLabel color={`#E5BF5E`} name={tagName} />
+        </Box>
         <Text pr={0}>{title}</Text>
       </Flex>
     </Flex>
