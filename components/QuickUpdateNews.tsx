@@ -1,7 +1,7 @@
 import { SimpleGrid } from "@chakra-ui/react";
 import React from "react";
 import useSWR from "swr";
-import { BingNewsService } from "../utils/BingNewsServices";
+import { BingNewsService } from "../utils/axios/BingNewsServices";
 import MiniDetailedCard from "./MiniDetailedCard";
 
 interface Props {

@@ -10,10 +10,10 @@ import React, { ReactElement, ReactNode, useState } from "react";
 import DetailedCard from "../../components/DetailedCard";
 import Hero from "../../components/Hero";
 import Layout from "../../layout/Layout";
-import { NewsService } from "../../utils/NewsService.";
+import { NewsService } from "../../utils/axios/NewsService";
 
 const Index = (props: any) => {
-  const postsCards = props.popularStories.map((story: object) => {
+  const postsCards = props.popularStories.map((story: any) => {
     return (
       <DetailedCard
         data={story}
@@ -71,3 +71,16 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 };
 
 export default Index;
+
+// import React, { ReactElement } from "react";
+// import Layout from "../../layout/Layout";
+
+// const Index = () => {
+//   return <div>Story page</div>;
+// };
+
+// Index.getLayout = function getLayout(component: ReactElement) {
+//   return <Layout>{component}</Layout>;
+// };
+
+// export default Index;

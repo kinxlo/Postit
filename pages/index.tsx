@@ -14,10 +14,10 @@ import TrendCard from "../components/TrendCard";
 import DetailedCard from "../components/DetailedCard";
 import Layout from "../layout/Layout";
 import Banner from "../components/Banner";
-import { BingNewsService } from "../utils/BingNewsServices";
+// import { BingNewsService } from "../utils/axios/BingNewsServices";
 import QuickUpdateNews from "../components/QuickUpdateNews";
 import { GetServerSideProps } from "next";
-import { NewsService } from "../utils/NewsService.";
+import { NewsService } from "../utils/axios/NewsService";
 
 const Index = (props: any) => {
   const grid: object = {
@@ -166,3 +166,16 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 };
 
 export default Index;
+
+// import React, { ReactElement } from "react";
+// import Layout from "../layout/Layout";
+
+// const Index = () => {
+//   return <div>Home page</div>;
+// };
+
+// Index.getLayout = function getLayout(component: ReactElement) {
+//   return <Layout>{component}</Layout>;
+// };
+
+// export default Index;

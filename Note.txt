@@ -65,3 +65,24 @@ em, %
 
 
 
+// const getNews = (): ReactNode => {
+
+  //   return data.map((story: object, index: number) => {
+  //     return (
+  //       <>
+  //         <Box my={10}>
+  //           <hr />
+  //         </Box>
+  //         <DetailedCard
+  //           key={index}
+  //           data={story}
+  //           width={`251px`}
+  //           dir={{ base: `column`, md: `row-reverse` }}
+  //           fontsize={`2xl`}
+  //         />
+  //       </>
+  //     );
+  //   });
+  // };
+
+  // const news = !data ? <div>loading...</div> : getNews();

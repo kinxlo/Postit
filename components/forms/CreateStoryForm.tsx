@@ -11,62 +11,139 @@ import {
   Flex,
   InputRightAddon,
 } from "@chakra-ui/react";
-import React from "react";
+
+import React, {
+  ChangeEvent,
+  FormEvent,
+  MutableRefObject,
+  useRef,
+  useState,
+} from "react";
 import { FaEdit, FaImage, FaTags } from "react-icons/fa";
+import { addDoc, collection } from "firebase/firestore";
+import { database, storage } from "../../utils/firebase/firebaseService";
+import { ref, uploadBytes } from "firebase/storage";
+
+const colRef = collection(database, "Stories");
 
 const CreateStoryForm = () => {
+  const [title, setTitle] = useState("");
+  const [tag, setTag] = useState("");
+  const [coverImageName, setCoverImageName] = useState("");
+  const [file, setFile] = useState<File>();
+  const [story, setStory] = useState("");
+  const fileInput = useRef() as MutableRefObject<HTMLInputElement>;
+
+  const handleCoverImage = (e: ChangeEvent<HTMLInputElement>) => {
+    setCoverImageName(e.target.files![0].name);
+    setFile(e.target.files![0]);
+  };
+
+  const uploadFile = () => {
+    if (file) {
+      const imageRef = ref(storage, `stories/${coverImageName}`);
+      uploadBytes(imageRef, file as Blob).then(() => {
+        uploadStories({
+          title,
+          tag,
+          coverImageName,
+          story,
+        });
+      });
+    }
+  };
+
+  const uploadStories = (data: object) => {
+    addDoc(colRef, data).then(() => {
+      console.log(`Story published!`);
+    });
+  };
+
+  const handleSubmit = (e: FormEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    uploadFile();
+  };
+
   return (
     <Box>
       <Heading mb={3.5}>Create Story</Heading>
-      <FormControl textAlign={`center`} isRequired>
+      <FormControl onSubmit={handleSubmit} as={`form`} textAlign={`center`}>
         <InputGroup mb={5} size={`lg`}>
-          <InputLeftElement pointerEvents="none">
+          <InputLeftElement>
             <Icon as={FaEdit} />
           </InputLeftElement>
           <Input
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              setTitle(e.target.value)
+            }
             fontSize={`sm`}
             placeholder="Title"
-            _placeholder={{ fontSize: `sm` }}
           />
         </InputGroup>
+
         <InputGroup mb={5} size={`lg`}>
-          <InputLeftElement pointerEvents="none">
+          <InputLeftElement>
             <Icon as={FaTags} />
           </InputLeftElement>
           <Input
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              setTag(e.target.value)
+            }
             fontSize={`sm`}
             placeholder="Tags"
-            _placeholder={{ fontSize: `sm` }}
           />
         </InputGroup>
+
         <InputGroup mb={5} size={`lg`}>
-          <InputLeftElement pointerEvents="none">
+          <InputLeftElement>
             <Icon as={FaImage} />
           </InputLeftElement>
-          <Input
-            readOnly
-            fontSize={`sm`}
-            placeholder="Tumbnail"
-            _placeholder={{ fontSize: `sm` }}
+          <input
+            onChange={handleCoverImage}
+            hidden
+            ref={fileInput}
+            type={`file`}
           />
-          <InputRightAddon bg={`accent`} color={`white`} cursor={`pointer`}>
+          <Input
+            value={coverImageName}
+            fontSize={`sm`}
+            placeholder="Cover image"
+            readOnly
+          />
+          <InputRightAddon
+            onClick={() => fileInput.current.click()}
+            bg={`accent`}
+            color={`white`}
+            cursor={`pointer`}
+          >
             Choose File
           </InputRightAddon>
         </InputGroup>
+
         <InputGroup size={`lg`}>
           <Textarea
+            onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
+              setStory(e.target.value)
+            }
             h={`20rem`}
             p={5}
             fontSize={`sm`}
             placeholder="Write your story..."
-            _placeholder={{ fontSize: `sm` }}
           />
         </InputGroup>
+
         <Flex justifyContent={`center`} gap={5}>
           {/* <Button my={5} px={20} size={`lg`} bg={`accent`} color={`white`}>
             Continue
           </Button> */}
-          <Button my={5} px={20} size={`lg`} bg={`accent`} color={`white`}>
+          <Button
+            type="submit"
+            my={5}
+            px={20}
+            size={`lg`}
+            bg={`accent`}
+            color={`white`}
+          >
             Publish Story
           </Button>
           <Button variant={`ghost`} my={5} px={20} size={`lg`} color={`red`}>
