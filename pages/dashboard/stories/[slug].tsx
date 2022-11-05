@@ -25,7 +25,7 @@ const SinglePost = () => {
         <Heading my={5} fontSize={`5xl`}>
           The 20 Biggest Fintech Companies In Nigeria 2022
         </Heading>
-        <AvatarDetail name="Mario Davies" size="sm" />
+        <AvatarDetail name="Mario Davies" size="sm" date={""} />
         <Box mt={5} mb={10}>
           <hr />
         </Box>
