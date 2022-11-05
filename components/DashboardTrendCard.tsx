@@ -5,7 +5,7 @@ import AvatarDetail from "./AvatarDetail";
 const DashboardTrendCard = () => {
   return (
     <Box>
-      <AvatarDetail size={`sm`} name={`Kingsley Solomon`} />
+      <AvatarDetail size={`sm`} name={`Kingsley Solomon`} date={""} />
       <Text mt={2.5} color={`lightGrey`}>
         The 20 Biggest Fintech Companies In Nigeria 2022
       </Text>
